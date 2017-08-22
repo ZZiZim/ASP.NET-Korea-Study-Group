@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+using DotNetNote20.Models;
+
 namespace DotNetNote20.Controllers
 {
     public class HelperMethodDemoController : Controller
