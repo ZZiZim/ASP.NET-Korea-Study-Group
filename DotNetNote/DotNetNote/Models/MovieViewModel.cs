@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNetNote.Models
+namespace DotNetNote20.Models
 {
     public class MovieViewModel
     {

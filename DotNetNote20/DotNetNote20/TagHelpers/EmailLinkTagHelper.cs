@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace DotNetNote.TagHelpers
+namespace DotNetNote20.TagHelpers
 {
     // <el>Help<el>
     // [HtmlTargetElement("email-link")]

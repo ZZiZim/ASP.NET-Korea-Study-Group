@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DotNetNote.Models;
+using DotNetNote20.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotNetNote.ViewComponents
+namespace DotNetNote20.ViewComponents
 {
     public class DataListViewComponent : ViewComponent
     {

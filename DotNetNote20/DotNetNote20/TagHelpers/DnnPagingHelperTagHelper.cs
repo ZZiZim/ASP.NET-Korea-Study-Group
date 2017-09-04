@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 
-namespace DotNetNote.TagHelpers
+namespace DotNetNote20.TagHelpers
 {
     /// <summary>
     /// 페이징 헬퍼(dnn-paging-helper)

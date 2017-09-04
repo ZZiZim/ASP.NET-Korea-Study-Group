@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace DotNetNote.TagHelpers
+namespace DotNetNote20.TagHelpers
 {
     public class StrongUnderlineTagHelper : TagHelper
     {

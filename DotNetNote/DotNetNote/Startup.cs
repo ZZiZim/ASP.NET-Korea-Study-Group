@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace DotNetNote
+namespace DotNetNote20
 {
     public class Startup
     {
@@ -31,7 +31,7 @@ namespace DotNetNote
             services.AddMvc();
 
             //[Demo] DemoFinder 의존성 주입
-            services.AddTransient<DotNetNote.Models.DataFinder>();
+            services.AddTransient<DotNetNote20.Models.DataFinder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DotNetNote.Models
+namespace DotNetNote20.Models
 {
     public class DemoModel
     {

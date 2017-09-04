@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DotNetNote
+namespace DotNetNote20
 {
     public class Program
     {
