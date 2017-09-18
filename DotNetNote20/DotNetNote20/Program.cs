@@ -20,6 +20,15 @@ namespace DotNetNote20
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .ConfigureAppConfiguration((builderContext, config) => {
+                    IHostingEnvironment env = builderContext.HostingEnvironment;
+
+                    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                        // [!] Configuration : Strongly Typed Configuration Setting
+                        //    추가 환경 설정 파일 지정
+                        .AddJsonFile($"Settings\\DotNetNoteSettings.json", optional: true);
+                })
                 .Build();
     }
 }
