@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using DotNetNote20.Services;
 using DotNetNote20.Settings;
 using DotNetNote20.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DotNetNote20
 {
@@ -49,6 +50,35 @@ namespace DotNetNote20
 
             //[Tech] 기술 목록
             services.AddTransient<ITechRepository, TechRepository>();
+
+            //[User] [1] 쿠키 인증 사용 공식 코드: 
+            services.AddAuthentication("Cookies")
+                    .AddCookie("Cookies", options =>
+                    {
+                        options.LoginPath = new PathString("/Home/Login/");
+                        options.AccessDeniedPath = new PathString("/Home/Forbidden/");
+                    });
+
+            // [User][9] Policy 설정
+            services.AddAuthorization(options =>
+            {
+                // Users Role이 있으면, Users Policy 부여
+                options.AddPolicy(
+                    "Users", policy => policy.RequireRole("Users"));
+                // Users Role이 있고 UserId가 “Admin”이면 “Administrators” 부여
+                options.AddPolicy(
+                    "Administrators",
+                        policy => policy
+                            .RequireRole("Users")
+                            .RequireClaim("UserId", // 대소문자 구분
+                                Configuration
+                                    .GetSection("DotNetNoteSettings")
+                                    .GetSection("SiteAdmin").Value)
+                            );
+            });
+
+            //[User][5] 회원 관리
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +94,8 @@ namespace DotNetNote20
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseAuthentication();
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -72,6 +104,7 @@ namespace DotNetNote20
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

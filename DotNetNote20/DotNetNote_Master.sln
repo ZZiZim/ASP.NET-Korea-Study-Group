@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNote20", "DotNetNote20\DotNetNote20.csproj", "{EF674B1C-7363-4C3D-A1CC-DCD9C68359FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNote", "..\DotNetNote\DotNetNote\DotNetNote.csproj", "{2A05AB56-7321-42AE-861E-1B91322D9663}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiHelloWorld", "..\ApiHelloWorld\ApiHelloWorld.csproj", "{A5B5B23C-799D-4552-B2DB-B0A3B4314F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiHelloWorld", "..\ApiHelloWorld\ApiHelloWorld.csproj", "{A5B5B23C-799D-4552-B2DB-B0A3B4314F8E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DotNetNote.Database", "DotNetNote.Database\DotNetNote.Database.sqlproj", "{3212341B-BC81-4593-8694-88B9AC6C13DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,12 @@ Global
 		{A5B5B23C-799D-4552-B2DB-B0A3B4314F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5B5B23C-799D-4552-B2DB-B0A3B4314F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5B5B23C-799D-4552-B2DB-B0A3B4314F8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3212341B-BC81-4593-8694-88B9AC6C13DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
