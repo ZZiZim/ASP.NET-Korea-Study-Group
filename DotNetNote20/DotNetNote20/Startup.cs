@@ -25,6 +25,11 @@ namespace DotNetNote20
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // [DNN] TempData[] 개체 사용
+            services.AddMemoryCache();
+            services.AddSession();
+
+            // [MVC] MVC 추가 및 JSON 렌더링 옵션 지정
             services.AddMvc();
 
             //[Demo] DemoFinder 의존성 주입
@@ -79,6 +84,9 @@ namespace DotNetNote20
 
             //[User][5] 회원 관리
             services.AddTransient<IUserRepository, UserRepository>();
+
+            // [CommunityCamp] 모듈 서비스 등록
+            services.AddTransient<ICommunityCampJoinMemberRepository, CommunityCampJoinMemberRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,6 +105,9 @@ namespace DotNetNote20
             app.UseAuthentication();
 
             app.UseStaticFiles();
+
+            // [DNN] TempData 개체 사용
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
