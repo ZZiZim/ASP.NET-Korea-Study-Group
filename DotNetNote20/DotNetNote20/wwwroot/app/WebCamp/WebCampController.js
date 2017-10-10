@@ -24,8 +24,8 @@
     function WebCampListController($scope, $http) {
         $scope.title = 'Speaker List';
 
-        $http.get('/api/WebCampService').success(function (data) {
-            $scope.speakers = data;
+        $http.get('/api/WebCampService').then(function (data) {
+            $scope.speakers = data.data;
         });
 
         activate();
